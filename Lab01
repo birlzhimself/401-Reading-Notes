@@ -1,0 +1,16 @@
+POWERSHELL SCRIPT
+
+# Enable automatic screen lock REG ADD "HKEY_CURRENT_USE
+# Enable automatic screen lock
+REG ADD "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 300 /f
+REG ADD "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaverIsSecure /t REG_SZ /d 1 /f
+REG ADD "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveActive /t REG_SZ /d 1 /f
+
+# Install and enable antivirus software
+# Replace <AntivirusInstaller> with the name of your antivirus installer file
+<AntivirusInstaller> /silent /install
+sc start <AntivirusService>
+
+# Enable automatic OS updates
+REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
+R\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 300 /f REG ADD "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaverIsSecure /t REG_SZ /d 1 /f REG ADD "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveActive /t REG_SZ /d 1 /f # Install and enable antivirus software # Replace <AntivirusInstaller> with the name of your antivirus installer file <AntivirusInstaller> /silent /install sc start <AntivirusService> # Enable automatic OS updates REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 4 /f
